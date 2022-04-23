@@ -1,0 +1,63 @@
+<html>
+
+<body>
+    <div>
+        <div class="foods">
+            Best foods
+        </div>
+    </div>
+</body>
+
+<script>
+
+    const rootElement = document.querySelector('.foods');
+
+    const foodData = [
+        {
+            id: 1,
+            image: '?',
+            name: 'tacos'
+        },
+        {
+            id: 2,
+            image: '?',
+            name: 'burger'
+        },
+        {
+            id: 3,
+            image: '?',
+            name: 'avocado'
+        },
+        {
+            id: 4,
+            image: '?',
+            name: 'apple'
+        },
+        {
+            id: 5,
+            image: '?',
+            name: 'pancakes'
+        },
+    ];
+ 
+  foodData.forEach((item, index) => {
+    const containerEL = document.createElement("div");
+    
+        const container =  rootElement.appendChild(containerEL);
+        const nameEL = document.createElement("p");
+        const deleteBtn = document.createElement("button");
+        const name = container.appendChild(nameEL);
+        const btn = container.appendChild(deleteBtn);
+
+        btn.textContent = 'delete: ' + item.name;
+        
+        //delete item 
+        btn.onclick =  function (){
+            console.log(container)
+            rootElement.removeChild(container)
+        }
+        name.textContent = 'name:' + item.name;
+    })
+</script>
+
+</html>
